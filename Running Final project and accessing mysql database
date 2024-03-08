@@ -1,0 +1,62 @@
+Running Final project and accessing mysql database
+
+
+Runnging web application
+
+Commands:
+
+First run the virtual environment using the command below
+
+	. cards_env/bin/activate
+	
+After running the command go to the following directory
+
+	cd cards_env/cards_database
+	
+After run the server using the following command
+
+	python3 manage.py runserver 127.0.0.1:8080
+	
+
+please note 
+
+	username: sdecoteau
+	Password: Firestone@95
+	
+	Administrator: Administrator
+	password: Firestone@95
+
+
+How to access the database
+
+First open the terminal and type the following command
+
+	mysql -u root -p
+	username: root
+	password: 1092017
+	
+To view the database enter the following command
+
+	SHOW DATABASES;
+
+To use a specific database like cards_db enter the following command
+
+	USE cards_db;
+	
+To view database tables use the following command
+
+	SHOW TABLES;
+	
+To view the data of a particular table like csdapp_cards enter the following command
+
+	SELECT * FROM csdapp_cards;
+	
+	
+	
+
+
+git remote set-url original https://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@github.com/shannon281/Debit-card-management-system
+
+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
+
+		

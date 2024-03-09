@@ -1,0 +1,53 @@
+{% extends "csdapp/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+img {
+    width: 500px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-bottom: 50px;	
+}
+
+@page{
+    size: "A4";
+    margin: 2.5cm 1.5cm 3.5cm 1.5cm;
+
+}
+</style>
+<img src= "{% static 'assets/Nexa Logo.png' %}">
+<h2> Cards Report</h2>
+<table class="table">
+    <thead class="thead">
+        <tr>
+            <th>Card Number</th>
+            <th>Mamber Name</th>
+            <th>Entry Date</th>
+            <th>Requested</th>
+            <th>Embossed</th>
+            <th>Received</th>
+            <th>Collected</th>
+            <th>Branch</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for card in cards  %}
+        <tr>
+            <td>{{card.card_num}}</td>
+            <td>{{card.member_name}}</td>
+            <td>{{card.entry_date}}</td>
+            <td>{{card.requested}}</td>
+            <td>{{card.embossed}}</td>
+            <td>{{card.received}}</td>
+            <td>{{card.collected}}</td>
+            <td>{{card.branch}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}

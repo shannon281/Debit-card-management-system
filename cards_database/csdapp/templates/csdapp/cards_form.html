@@ -1,0 +1,55 @@
+{% extends "csdapp/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h1 class="display-4">Cards Database</h1>
+<p class="lead font-italic">Please insert cards here!</p>
+<hr class= "my-4">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-20">
+
+<form action="" method="post" autocomplete="off">
+	{% csrf_token %}
+	<div class="row justify-content-center">	
+		<div class="col-md-5">
+			{{form.card_num|as_crispy_field}}
+		</div>
+		<div class="col-md-5">
+			{{form.member_name|as_crispy_field}}
+		</div>
+		<div class="col-md-5">
+			{{form.entry_date|as_crispy_field}}
+		</div>
+		<div class="col-md-5">
+			{{form.requested|as_crispy_field}}
+		</div>
+		<div class="col-md-5">
+			{{form.embossed|as_crispy_field}}
+		</div>
+		<div class="col-md-5">
+			{{form.received|as_crispy_field}}
+		</div>
+		<div class="col-md-5">
+			{{form.collected|as_crispy_field}}
+		</div>
+		<div class="col-md-5">
+			{{form.branch|as_crispy_field}}
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-md-7">
+			<button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i> Submit</button>	
+		</div>
+		<div class="col-md-4">
+			<a href="{% url 'cards_list' %}" class= "btn btn-secondary btn-block btn-lg float-right">
+				<i class="fas fa-stream"></i> Back to list
+			</a>
+		</div>
+	</div>
+</form>
+</div>
+</div>
+</div>
+{% endblock content %}
+

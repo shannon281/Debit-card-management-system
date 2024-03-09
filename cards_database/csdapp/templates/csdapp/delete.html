@@ -1,0 +1,22 @@
+{% extends 'csdapp/base.html' %}
+{% block content %}
+<br>
+<div class="row">
+	<div class="col-md-6 mx-auto">
+		
+			<p>Are you sure you want to delete?</p>
+
+			<form action="{% url 'cards_delete' card.id %}" method="POST">
+				{% csrf_token %}
+				
+				<input class="btn btn-danger" type="Submit" name="Yes" value="Yes">
+				
+				<a class="btn btn-warning" href="{% url 'cards_list' %}">No</a>
+			</form>
+	
+	</div>
+</div>
+
+
+{% endblock %}
+
